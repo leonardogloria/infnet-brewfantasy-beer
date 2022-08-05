@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: brewfantasy
+      port: 27017
+      uri: mongodb://ec2-35-175-109-90.compute-1.amazonaws.com:27017
