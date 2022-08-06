@@ -3,4 +3,11 @@ spring:
     mongodb:
       database: brewfantasy
       port: 27017
-      uri: mongodb://ec2-35-175-109-90.compute-1.amazonaws.com:27017
+      uri: mongodb://ec2-44-204-141-189.compute-1.amazonaws.com:27017
+keycloak:
+  auth-server-url: http://ec2-44-204-141-189.compute-1.amazonaws.com:8080
+  realm: master
+  resource: breefantasy
+  credentials:
+    secret: o5b1qD5bnsFXizyD9wrkT7gYt8RAofGM
+  bearer-only: true
