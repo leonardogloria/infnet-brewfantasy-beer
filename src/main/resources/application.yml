@@ -3,4 +3,19 @@ spring:
     mongodb:
       database: brewfantasy
       port: 27017
-      uri: mongodb://ec2-35-175-109-90.compute-1.amazonaws.com:27017
+      uri: mongodb://ec2-44-204-141-189.compute-1.amazonaws.com:27017
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ec2-44-204-141-189.compute-1.amazonaws.com:3306/users
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+
