@@ -3,4 +3,10 @@ spring:
     mongodb:
       database: brewfantasy
       port: 27017
-      uri: mongodb://ec2-35-175-109-90.compute-1.amazonaws.com:27017
+      uri: mongodb://ec2-44-209-166-240.compute-1.amazonaws.com:27017
+  application:
+    name: BEER
+
+
+
+

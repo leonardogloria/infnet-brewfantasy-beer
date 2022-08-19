@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: beer
+  labels:
+    app: beer
+spec:
+  containers:
+    - name: beer
+      image: leogloria/brewfantasy-beer:latest
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
