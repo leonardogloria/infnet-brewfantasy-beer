@@ -19,6 +19,17 @@ public class CervejaController {
         List<Cerveja> all = cervejaService.findAll();
         return ResponseEntity.ok(all);
     }
+    @GetMapping("/top5")
+    public ResponseEntity<List<Cerveja>> top5(){
+        List<Cerveja> cervejas = cervejaService.top5();
+        return ResponseEntity.ok(cervejas);
+    }
+    @GetMapping("/atualiza")
+    public ResponseEntity<Map<String,String>> atualiza(){
+        cervejaService.atualizaTop5();
+        return ResponseEntity.ok(Map.of("message", "atualizado"));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Cerveja> findById(@PathVariable Long id){
         Cerveja byId = cervejaService.findById(id);

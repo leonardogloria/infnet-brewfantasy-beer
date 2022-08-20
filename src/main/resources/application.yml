@@ -1,4 +1,9 @@
 spring:
+  cache:
+    type: redis
+  redis:
+    host: 44.209.166.240
+    port: 6379
   data:
     mongodb:
       database: brewfantasy
@@ -6,6 +11,9 @@ spring:
       uri: mongodb://ec2-44-209-166-240.compute-1.amazonaws.com:27017
   application:
     name: BEER
+  zipkin:
+    base-url: http://44.209.166.240:9411
+
 eureka:
   client:
     service-url:
@@ -29,6 +37,8 @@ resilience4j:
     instances:
       notaServiceRetry:
         max-attempts: 3
-
-
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

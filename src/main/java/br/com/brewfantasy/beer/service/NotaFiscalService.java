@@ -4,6 +4,7 @@ import br.com.brewfantasy.beer.model.NotaVO;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -21,6 +22,7 @@ public class NotaFiscalService {
         return new NotaVO();
     }
     @Retry(name = "notaServiceRetry")
+    @Timed(value="time_to_get_nota_fiscal",description="tempo para gerar nota fiscal",percentiles={0.5,0.9})
     public NotaVO emiteOutraNotaFiscal(Long id){
         return restTemplate.getForObject("http://NOTA-FISCAL/" + id, NotaVO.class);
     }
